@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "hansans";
+  src: url("./SourceHanSansSC-Normal.otf");
+}
+body {
+  font-family: hansans;
+  margin: 0;
+}
+:root {
+  --main-color: rgb(0, 175, 175);
+  --sub-color: #ff991a;
+}
+a {
+  text-decoration: none;
+}
+
+.margin-15p {
+  margin: 0 15%;
+}
