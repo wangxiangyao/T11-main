@@ -1,13 +1,15 @@
 <template>
   <div class="nav-bar">
     <div class="logo">
-      <img src="../assets/logo.png" alt="T11">
+      <img src="../assets/logo.png" alt="T11" />
     </div>
     <div class="nav-box">
       <div class="nav-item" v-for="(value, name) in nav" :key="name">
-        <router-link  class="nav" :to="value.router.path" >{{ value.title }}</router-link>
+        <router-link class="nav" :to="value.router.path">{{
+          value.title
+        }}</router-link>
       </div>
-  </div>
+    </div>
   </div>
 </template>
 
@@ -15,21 +17,20 @@
 export default {
   name: "Nav",
   data() {
-    return {
-    };
+    return {};
   },
   computed: {
-    nav(){
+    nav() {
       return this.$store.state.nav;
     }
-  },
+  }
 };
 </script>
 <style scoped>
 .nav-bar {
   display: flex;
   padding: 0 15%;
-  background-color: rgba(0, 0, 0, 0.7)
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .nav-box {
   display: flex;

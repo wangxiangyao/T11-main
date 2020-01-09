@@ -1,15 +1,14 @@
 <template>
   <div class="normal-title">
-    <div class="title" >{{ title }}</div>
-    <div class="sub-title" >{{ subTitle }}</div>
+    <div class="title">{{ title }}</div>
+    <div class="sub-title">{{ subTitle }}</div>
   </div>
 </template>
 
 <script>
 export default {
   name: "normalTitle",
-  props: ["title", "subTitle", 'color']
-  
+  props: ["title", "subTitle", "color"]
 };
 </script>
 <style scoped>

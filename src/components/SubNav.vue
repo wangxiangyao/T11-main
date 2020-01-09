@@ -7,7 +7,13 @@
       <div class="path">{{ nav.children[currentNav].title }}</div>
     </div>
     <div class="subnav-item subnav-box">
-      <router-link class="subnav" v-for="(value, name) in nav.children" :key="name" :to="`${nav.router.path}/${value.router.path}`">{{ value.title }}</router-link>
+      <router-link
+        class="subnav"
+        v-for="(value, name) in nav.children"
+        :key="name"
+        :to="`${nav.router.path}/${value.router.path}`"
+        >{{ value.title }}</router-link
+      >
     </div>
   </div>
 </template>
@@ -18,14 +24,14 @@ import { mapState } from "vuex";
 export default {
   name: "subNav",
   props: {
-    name: String,
+    name: String
   },
   computed: {
-    nav(){
+    nav() {
       return this.$store.state.nav[this.name];
     },
     currentNav() {
-      let paths = this.$route.fullPath.split('/');
+      let paths = this.$route.fullPath.split("/");
       return paths[2];
     }
   }
@@ -47,7 +53,6 @@ export default {
   display: flex;
 }
 .subnav-box {
-
 }
 .icon-home {
   color: #666;

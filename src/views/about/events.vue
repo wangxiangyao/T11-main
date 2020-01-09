@@ -2,12 +2,27 @@
   <div id="about-events">
     <normalTitle title="大事记" subTitle="Memorabilia"></normalTitle>
     <div class="stage">
-      <el-carousel height="100%" :autoplay="false" indicator-position="none" arrow="always" @change="handleChange">
-        <el-carousel-item class="list-box" v-for="(list, key) in eventList" :key="key">
+      <el-carousel
+        height="100%"
+        :autoplay="false"
+        indicator-position="none"
+        arrow="always"
+        @change="handleChange"
+      >
+        <el-carousel-item
+          class="list-box"
+          v-for="(list, key) in eventList"
+          :key="key"
+        >
           <div class="period">{{ `${eventStart}-${eventEnd}` }}</div>
           <div class="headline">T11艺术教育学院大事记</div>
           <transition-group name="list" tag="div" class="list">
-            <div class="list-item" v-show="currentShow == key" v-for="(v, k) in list" :key="k">
+            <div
+              class="list-item"
+              v-show="currentShow == key"
+              v-for="(v, k) in list"
+              :key="k"
+            >
               <div class="dot-line">
                 <div class="dot"></div>
                 <div class="line"></div>
@@ -15,7 +30,7 @@
               <div class="item-content">
                 <div class="content">
                   <div class="one" v-for="(c, k) in v.content" :key="k">
-                    {{c}}
+                    {{ c }}
                   </div>
                 </div>
                 <div class="year">{{ v.year }}</div>
@@ -43,7 +58,10 @@ export default {
       events: [
         {
           year: 2019,
-          content: ["10月——T11郑州总部完成组建，开始正式运营。", "10月——T11郑州总部完成组建，开始正式运营。"]
+          content: [
+            "10月——T11郑州总部完成组建，开始正式运营。",
+            "10月——T11郑州总部完成组建，开始正式运营。"
+          ]
         },
         {
           year: 2019,
@@ -80,42 +98,41 @@ export default {
         {
           year: 2018,
           content: ["3月T11新乡首家3200平“南城校区”开始正式运营。"]
-        },
+        }
       ],
       currentShow: 0,
       nextContent: [
         "2020年，T11实现省会城市、地级城市、县级城市的校区标本打造，校区数量不低于5个，学生数量不低于10000人，学费收入不低于1亿元；",
         "2021年，完成总部城市郑州20个直营校区的开设，并明确加盟模式，加盟校区100家，学生数量不低于100000人，学费收入不低于10亿元，活动运营收入不低于2亿元；",
         "2022年，加盟校区突破500家，学生数量不低于100万人，学费收入不低于100亿元，活动运营收入不低于20亿元，配套电商收入不低于3亿元，流量变现收入不低于5亿元。",
-        "2024年，加盟校区目标1000家......",
+        "2024年，加盟校区目标1000家......"
       ]
-    }
+    };
   },
   computed: {
     eventList() {
-      let result = []
-      for(var i = 0, len = this.events.length; i < len; i += 5){
+      let result = [];
+      for (var i = 0, len = this.events.length; i < len; i += 5) {
         result.push(this.events.slice(i, i + 5));
       }
-      return result
+      return result;
     }
   },
   methods: {
     handleChange(currentIndex, oldIndex) {
-      this.currentShow = currentIndex
+      this.currentShow = currentIndex;
     }
   },
   components: {
     normalTitle,
     normalContent
-  },
-  
+  }
 };
 </script>
 <style lang="stylus" scoped>
 .stage
   background-color var(--main-color)
-  background-image: 
+  background-image:
     linear-gradient(90deg, var(--main-color) 0% 20%, rgba(23, 158, 158, 0.93) 30% 80%, var(--main-color) 90% 100% );
   background-size: 5px
   color: #fff
@@ -168,7 +185,7 @@ export default {
           margin-bottom 20px
           font-size 40px
           letter-spacing 10px
-      .list-enter-active, .list-leave-active 
+      .list-enter-active, .list-leave-active
         transition: all 1s;
       .list-enter, .list-leave-to
         transform translateY(100%);

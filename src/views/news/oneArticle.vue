@@ -1,6 +1,6 @@
 <template>
   <div class="oneArticle">
-   <myArticle v-if="!article.isLoading" :article="article"/>
+    <myArticle v-if="!article.isLoading" :article="article" />
   </div>
 </template>
 <script>
@@ -8,14 +8,12 @@ import { mapActions } from "vuex";
 import myArticle from "../../components/Article";
 export default {
   name: "oneArticle",
-  props: ['id', 'sort'],
+  props: ["id", "sort"],
   data() {
-    return {
-      
-    }
+    return {};
   },
   methods: {
-    ...mapActions("article", ['getArticleById'])
+    ...mapActions("article", ["getArticleById"])
   },
   computed: {
     article() {
@@ -23,13 +21,11 @@ export default {
     }
   },
   beforeMount() {
-    this.getArticleById({ sort: this.sort, id: this.id});
+    this.getArticleById({ sort: this.sort, id: this.id });
   },
   components: {
     myArticle
   }
 };
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>

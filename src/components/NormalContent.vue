@@ -9,15 +9,14 @@
 <script>
 export default {
   name: "normalContent",
-  props: ['content']
-  
+  props: ["content"]
 };
 </script>
 <style scoped>
 .normal-content .content {
-    margin: 15px 12%;
-    text-align: justify;
-    line-height: 40px; 
-    text-indent: 40px;
-  }
+  margin: 15px 12%;
+  text-align: justify;
+  line-height: 40px;
+  text-indent: 40px;
+}
 </style>

@@ -5,7 +5,7 @@
     <div class="about-content" v-show="$route.name != 'companyMore'">
       <Company class="margin-15p" />
       <Us />
-      <Events class="margin-10p"/>
+      <Events class="margin-10p" />
     </div>
   </div>
 </template>
@@ -14,27 +14,25 @@ import SubNav from "../../components/SubNav";
 import Company from "./company";
 import Events from "./events";
 import Us from "./us";
-import more from "./more"
+import more from "./more";
 export default {
   name: "about",
   data() {
-    return {
-      
-    }
+    return {};
   },
-  beforeRouteUpdate (to, from, next) { 
-    let name = to.name
-    if (name == "us" || name =="events") {
-      document.querySelector(`#about-${name}`).scrollIntoView()
+  beforeRouteUpdate(to, from, next) {
+    let name = to.name;
+    if (name == "us" || name == "events") {
+      document.querySelector(`#about-${name}`).scrollIntoView();
     }
-    next()
+    next();
   },
   mounted() {
-    let name = this.$route.name
-    if (name == "us" || name =="events") {
+    let name = this.$route.name;
+    if (name == "us" || name == "events") {
       this.$nextTick(() => {
-        document.querySelector(`#about-${name}`).scrollIntoView()
-      })
+        document.querySelector(`#about-${name}`).scrollIntoView();
+      });
     }
   },
   components: {
@@ -43,8 +41,7 @@ export default {
     Events,
     Us,
     more
-  },
-  
+  }
 };
 </script>
 <style lang="stylus" scoped>

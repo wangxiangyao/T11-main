@@ -9,8 +9,7 @@ import SubNav from "../../components/SubNav";
 export default {
   name: "news",
   data() {
-    return {
-    }
+    return {};
   },
   components: {
     SubNav
@@ -21,11 +20,10 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('resize', this.listenResize)
+    window.addEventListener("resize", this.listenResize);
   },
   destroyed() {
-
-    window.removeEventListener('resize', this.listenResize);
+    window.removeEventListener("resize", this.listenResize);
   }
 };
 </script>

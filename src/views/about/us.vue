@@ -8,17 +8,21 @@
           <div class="position">{{ currentOne.position }}</div>
           <i class="iconfont icon-jiantou-xia"></i>
           <div class="info" v-for="(v, k) in currentOne.info" :key="k">
-            {{v}}
+            {{ v }}
           </div>
         </div>
         <div class="photo-box">
-          <img :src="currentOne.photo" alt="" class="photo">
+          <img :src="currentOne.photo" alt="" class="photo" />
         </div>
         <div class="history-box">
           <div class="topBox">
             <div class="topBox-text">成绩</div>
           </div>
-          <div class="history-item" v-for="(v, k) in currentOne.history" :key="k">
+          <div
+            class="history-item"
+            v-for="(v, k) in currentOne.history"
+            :key="k"
+          >
             <div class="line-dot">
               <div class="line"></div>
               <div class="dot"></div>
@@ -32,15 +36,26 @@
       </div>
       <div class="select">
         <div class="select-box">
-          <el-carousel type="card" :initial-index="1" :autoplay="false" indicator-position="none" arrow="never" @change="switchOne">
-            <el-carousel-item class="select-item-box" :key="key" v-for="(value, key) in us" >
+          <el-carousel
+            type="card"
+            :initial-index="1"
+            :autoplay="false"
+            indicator-position="none"
+            arrow="never"
+            @change="switchOne"
+          >
+            <el-carousel-item
+              class="select-item-box"
+              :key="key"
+              v-for="(value, key) in us"
+            >
               <div class="select-item">
                 <div class="avator-box">
-                  <img :src="value.avator" alt="" class="avator">
+                  <img :src="value.avator" alt="" class="avator" />
                 </div>
                 <div class="name">{{ value.name }}</div>
                 <div class="info" v-for="(v, k) in value.info" :key="k">
-                  {{v}}
+                  {{ v }}
                 </div>
               </div>
             </el-carousel-item>
@@ -61,8 +76,8 @@ export default {
           id: 1,
           name: "贺应斌",
           position: "创始人",
-          photo: require('../../assets/fengfeng.png'),
-          avator: require('../../assets/heyingbin-avator.png'),
+          photo: require("../../assets/fengfeng.png"),
+          avator: require("../../assets/heyingbin-avator.png"),
           info: [
             "啊手动阀手动阀手动阀",
             "啊手动阀手动阀手动阀手动阀手动阀手动阀",
@@ -70,16 +85,16 @@ export default {
           ],
           history: [
             {
-              company: '贺应斌的第一个公司',
-              position: '销售经理'
+              company: "贺应斌的第一个公司",
+              position: "销售经理"
             },
             {
-              company: '贺应斌的第二个公司',
-              position: '运营总监'
+              company: "贺应斌的第二个公司",
+              position: "运营总监"
             },
             {
-              company: '贺应斌的第三个公司',
-              position: '董事'
+              company: "贺应斌的第三个公司",
+              position: "董事"
             }
           ]
         },
@@ -87,8 +102,8 @@ export default {
           id: 2,
           name: "冯枫",
           position: "创始人",
-          photo: require('../../assets/fengfeng.png'),
-          avator: require('../../assets/fengfeng-avator.png'),
+          photo: require("../../assets/fengfeng.png"),
+          avator: require("../../assets/fengfeng-avator.png"),
           info: [
             "啊手动阀手动阀手动阀",
             "啊手动阀手动阀手动阀手动阀手动阀手动阀",
@@ -96,16 +111,16 @@ export default {
           ],
           history: [
             {
-              company: '北京胜者国际营销策划机构',
-              position: '策划经理'
+              company: "北京胜者国际营销策划机构",
+              position: "策划经理"
             },
             {
-              company: '河南帝隆集团',
-              position: '副总裁'
+              company: "河南帝隆集团",
+              position: "副总裁"
             },
             {
-              company: '河南壹仓优品百货有限公司',
-              position: '副总经理 董事'
+              company: "河南壹仓优品百货有限公司",
+              position: "副总经理 董事"
             }
           ]
         },
@@ -113,8 +128,8 @@ export default {
           id: 3,
           name: "贺飞",
           position: "创始人",
-          photo: require('../../assets/fengfeng.png'),
-          avator: require('../../assets/hefei-avator.png'),
+          photo: require("../../assets/fengfeng.png"),
+          avator: require("../../assets/hefei-avator.png"),
           info: [
             "啊手动阀手动阀手动阀",
             "啊手动阀手动阀手动阀手动阀手动阀手动阀",
@@ -122,40 +137,39 @@ export default {
           ],
           history: [
             {
-              company: '贺飞的第一个公司',
-              position: '前端负责人'
+              company: "贺飞的第一个公司",
+              position: "前端负责人"
             },
             {
-              company: '贺飞的第二个公司',
-              position: '技术总监'
+              company: "贺飞的第二个公司",
+              position: "技术总监"
             },
             {
-              company: '贺飞的第三个公司',
-              position: '董事'
+              company: "贺飞的第三个公司",
+              position: "董事"
             }
           ]
         }
       ],
       selectOne: 2
-    }
+    };
   },
   computed: {
     currentOne() {
-      return this.us.filter((v) => {
-        return v.id == this.selectOne
+      return this.us.filter(v => {
+        return v.id == this.selectOne;
       })[0];
     }
   },
   methods: {
     switchOne(id) {
-      console.log(id)
+      console.log(id);
       this.selectOne = id + 1;
     }
   },
   components: {
     normalTitle
-  },
-  
+  }
 };
 </script>
 <style lang="stylus">
@@ -182,7 +196,7 @@ export default {
         padding: 30px 15px
         background-color #fff
         box-shadow 0 8px 8px rgba(10,16,20,.54),0 0 8px rgba(10,16,20,.12)
-        .name 
+        .name
           font-size: 20px
           font-weight bold
     .info
@@ -237,7 +251,7 @@ export default {
             flex-direction column
             align-items center
             margin-left: 18px
-          
+
             .line
               width 2.5px
               height 50px
@@ -255,4 +269,3 @@ export default {
             font-size 12px
             margin-left 20px
 </style>
-

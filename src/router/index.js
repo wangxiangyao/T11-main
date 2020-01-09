@@ -5,14 +5,14 @@ import nav from "../store/nav";
 Vue.use(VueRouter);
 
 const routes = buildRoutes(nav);
-function buildRoutes (nav) {
+function buildRoutes(nav) {
   let routes = [];
   for (let [key, value] of Object.entries(nav)) {
     if (value.children) {
       let children = buildRoutes(value.children);
       routes.push({
         ...value.router,
-        children,
+        children
       });
     } else {
       routes.push({
@@ -27,7 +27,7 @@ routes.push({
   path: "/",
   name: "root",
   redirect: "/home"
-})
+});
 
 const router = new VueRouter({
   mode: "history",

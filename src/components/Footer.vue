@@ -23,7 +23,7 @@
           <div class="item">电话：15937887274</div>
           <div class="item">邮箱：bjt@168.com</div>
         </div>
-        <div class="QR-code"></div>  
+        <div class="QR-code"></div>
       </div>
     </div>
     <div class="footer-message">
@@ -41,16 +41,16 @@
 
 <script>
 export default {
-  name: 'myFooter',
+  name: "myFooter",
   data() {
-    return {}
+    return {};
   },
   computed: {
     nav() {
-      return this.$store.state.nav
+      return this.$store.state.nav;
     }
   }
-}
+};
 </script>
 <style scoped>
 .footer .footer-bar {

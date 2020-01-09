@@ -3,16 +3,18 @@ module.exports = {
     router: {
       path: "/home",
       name: "home",
-      component: () => import(/* webpackChunkName: "news" */ "../views/home.vue"),
+      component: () =>
+        import(/* webpackChunkName: "news" */ "../views/home.vue")
     },
-    title: "首页",
+    title: "首页"
   },
   news: {
     router: {
       path: "/news",
       name: "news",
-      component: () => import(/* webpackChunkName: "news" */ "../views/news/news.vue"),
-      redirect: '/news/activity'
+      component: () =>
+        import(/* webpackChunkName: "news" */ "../views/news/news.vue"),
+      redirect: "/news/activity"
     },
     title: "新闻中心",
     redirect: "activity",
@@ -21,7 +23,8 @@ module.exports = {
         router: {
           path: "activity",
           name: "activity",
-          component: () => import(/* webpackChunkName: "news" */ "../views/news/activity.vue"),
+          component: () =>
+            import(/* webpackChunkName: "news" */ "../views/news/activity.vue")
         },
         title: "活动新闻",
         to: "/news/activity",
@@ -38,7 +41,8 @@ module.exports = {
         router: {
           path: "company",
           name: "company",
-          component: () => import(/* webpackChunkName: "news" */ "../views/news/company.vue")
+          component: () =>
+            import(/* webpackChunkName: "news" */ "../views/news/company.vue")
         },
         title: "公司新闻",
         to: "/news/company",
@@ -57,8 +61,9 @@ module.exports = {
     router: {
       path: "/download",
       name: "download",
-      component: () => import(/* webpackChunkName: "download" */ "../views/download.vue"),
-      redirect: '/download/teacher'
+      component: () =>
+        import(/* webpackChunkName: "download" */ "../views/download.vue"),
+      redirect: "/download/teacher"
     },
     title: "下载",
     redirect: "teacher",
@@ -66,7 +71,7 @@ module.exports = {
       teacher: {
         router: {
           path: "teacher",
-          name: "teacher",
+          name: "teacher"
         },
         title: "老师端",
         to: "/download/teacher"
@@ -88,19 +93,22 @@ module.exports = {
       path: "/joinUs",
       name: "joinUs",
       component: () =>
-      import(/* webpackChunkName: "JoinUs" */ "../views/joinUs/joinUs.vue"),
-      redirect: '/joinUs/organization'
+        import(/* webpackChunkName: "JoinUs" */ "../views/joinUs/joinUs.vue"),
+      redirect: "/joinUs/organization"
     },
     children: {
       organization: {
         router: {
           path: "organization",
           name: "organization",
-          component: () => import(/* webpackChunkName: "JoinUs" */ "../views/joinUs/organization.vue")
+          component: () =>
+            import(
+              /* webpackChunkName: "JoinUs" */ "../views/joinUs/organization.vue"
+            )
         },
         title: "机构入驻",
         to: "/joinUs/organization"
-      },
+      }
       // join: {
       //   router: {
       //     path: "join",
@@ -117,14 +125,14 @@ module.exports = {
       path: "/about",
       name: "about",
       component: () =>
-      import(/* webpackChunkName: "About" */ "../views/about/about.vue"),
-      redirect: '/about/firm',
-      scrollBehavior (to, from, savedPosition) {
+        import(/* webpackChunkName: "About" */ "../views/about/about.vue"),
+      redirect: "/about/firm",
+      scrollBehavior(to, from, savedPosition) {
         if (to.hash) {
-          console.log(to)
+          console.log(to);
           return {
             selector: to.hash
-          }
+          };
         }
       }
     },
@@ -134,7 +142,7 @@ module.exports = {
       firm: {
         router: {
           path: "firm",
-          name: "firm",
+          name: "firm"
         },
         title: "公司介绍",
         to: "/about/firm",
@@ -143,14 +151,14 @@ module.exports = {
             router: {
               path: "more",
               name: "companyMore"
-            },
+            }
           }
         }
       },
       us: {
         router: {
           path: "us",
-          name: "us",
+          name: "us"
         },
         title: "团队介绍",
         to: "/about/us"
@@ -158,11 +166,11 @@ module.exports = {
       events: {
         router: {
           path: "events",
-          name: "events",          
+          name: "events"
         },
         title: "大事记",
         to: "/about/events"
-      },
+      }
     }
   }
-}
+};

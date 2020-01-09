@@ -6,21 +6,21 @@
       </div>
       <div class="pagenation-box">
         <el-pagination
-        layout="prev, pager, next"
-        :page-size="4" 
-        :total="activity.total"
-        :current-page="activity.page + 1"
-        @current-change="currentChange">
+          layout="prev, pager, next"
+          :page-size="4"
+          :total="activity.total"
+          :current-page="activity.page + 1"
+          @current-change="currentChange"
+        >
         </el-pagination>
       </div>
     </div>
     <div class="one" v-else-if="!isList">
-      <oneArticle :id="theArticleId" sort="activity"/>
+      <oneArticle :id="theArticleId" sort="activity" />
     </div>
   </div>
 </template>
 <script>
-
 import { mapActions, mapState } from "vuex";
 
 import articleBreviary from "../../components/ArticleBreviary";
@@ -29,31 +29,31 @@ import oneArticle from "./oneArticle";
 export default {
   name: "activity",
   methods: {
-    ...mapActions("article", ['getArticleList']),
+    ...mapActions("article", ["getArticleList"]),
     currentChange(page) {
       this.getArticleList({
         sort: "activity",
-        page: page - 1,
-      })
+        page: page - 1
+      });
     }
   },
   computed: {
     ...mapState("article", ["activity"]),
     isList() {
-      return this.$route.name == "activityById" ? false : true
+      return this.$route.name == "activityById" ? false : true;
     },
     theArticleId() {
-      if(this.isList) {
-        return 0
+      if (this.isList) {
+        return 0;
       } else {
-        return this.$route.params.id
+        return this.$route.params.id;
       }
     },
     articleList() {
-      let list = []
-      return this.activity.listByPage[this.activity.page].map((id) => {
-        return this.activity.list[id]
-      })
+      let list = [];
+      return this.activity.listByPage[this.activity.page].map(id => {
+        return this.activity.list[id];
+      });
     }
   },
   components: {
@@ -63,12 +63,12 @@ export default {
 };
 </script>
 <style scoped>
-  .activity .list {
-    margin: 40px;
-  }
-  .pagenation-box {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-  }
+.activity .list {
+  margin: 40px;
+}
+.pagenation-box {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
 </style>

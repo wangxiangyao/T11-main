@@ -3,7 +3,7 @@ import Vuex from "vuex";
 import { CHANGE_CURRENT_PAGE, CAROUSEL_DOWNLOAD_PATH_DATA } from "./mutations";
 import nav from "./nav";
 import article from "./modules/Article";
-import api from '../API/API';
+import api from "../API/API";
 
 Vue.use(Vuex);
 
@@ -13,7 +13,7 @@ export default new Vuex.Store({
     isLoading: false,
     downloadPath: {
       teacher: {
-        ios: 'www.baidu.com',
+        ios: "www.baidu.com",
         android: "www.bilibili.com"
       },
       parents: {
@@ -29,7 +29,7 @@ export default new Vuex.Store({
       state.currentPage.title = "1";
     },
     [CAROUSEL_DOWNLOAD_PATH_DATA](state, data) {
-      state.downloadPath = {...data.downloadPath}
+      state.downloadPath = { ...data.downloadPath };
       state.CarouselList = [...data.CarouselList];
     }
   },
