@@ -14,7 +14,7 @@
     "core-js": "^3.4.4",
     "element-ui": "^2.4.5",
     "laravel-vue-pagination": "^2.1.0",
-    "three": "^0.112.1",
+    "three": "^0.137.0",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.5",
     "vue-hot-reload-api": "^2.3.3",
